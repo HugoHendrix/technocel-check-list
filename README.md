@@ -1,6 +1,6 @@
 # Technocel Check List
 
-Ferramenta para auxiliar nos checklists de gerenciamento de risco da Technocel.
+Ferramenta para auxiliar nos checklists dos sensores e atuadores dos veículos. 
 
 ## Objetivo
 
