@@ -29,18 +29,27 @@
                 onclick="document.getElementById('aviso-jtcm').style.display='none'">❌</span>
         </span>
     </div> -->
-    
+
     <hr>
 
     <section class="flash default">
         <h2>📣Passagem de Turno</h2>
-
-
+        <label for="passagem-turno">Informe aqui os check lists pendentes</label>
+        <textarea name="passagem-turno" id="passagem-turno" cols="100" rows="10"
+            placeholder="Exemplo: Caminhão Truck aguardando documentação, rastreador Omnilink pendente de atualização, etc."></textarea>
+        <br>
+        <button class="accent" id="btn-salvar-passagem">Salvar texto</button>
+        <button class="success" id="btn-copiar-passagem">Copiar texto</button>
     </section>
+    <script>
+       
+    </script>
 
     <section class="flash default">
         <h2>🧩 Orientações para Início do Check List</h2>
-        <p>Selecione abaixo o tipo de caminhão ou rastreador correspondente. Após a seleção, siga as orientações exibidas para enviar corretamente as informações via WhatsApp, conforme o procedimento indicado para cada situação.</p>
+        <p>Selecione abaixo o tipo de caminhão ou rastreador correspondente. Após a seleção, siga as orientações
+            exibidas para enviar corretamente as informações via WhatsApp, conforme o procedimento indicado para cada
+            situação.</p>
         <label for="tipo-caminhao">Selecione o tipo de caminhão:</label>
         <select id="tipo-caminhao">
             <option value="">-- Escolha --</option>

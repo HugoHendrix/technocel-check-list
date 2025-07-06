@@ -45,6 +45,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+// Função para salvar e copiar texto da passagem de turno
+// Salva o texto no localStorage e copia para a área de transferência
+function salvarTexto(idTextarea, storageKey) {
+    const texto = document.getElementById(idTextarea).value;
+    localStorage.setItem(storageKey, texto);
+
+}
+
+function copiarTexto(idTextarea) {
+    const textarea = document.getElementById(idTextarea);
+    textarea.select();
+    document.execCommand('copy');
+
+}
+
+// Carregar texto salvo ao abrir a página
+window.addEventListener('DOMContentLoaded', () => {
+    const salvo = localStorage.getItem('passagem-turno');
+    if (salvo) document.getElementById('passagem-turno').value = salvo;
+});
+
+document.getElementById('btn-salvar-passagem').onclick = () => salvarTexto('passagem-turno', 'passagem-turno');
+document.getElementById('btn-copiar-passagem').onclick = () => copiarTexto('passagem-turno');
+
+
+
 // Função para exibir orientações de acordo com o tipo de caminhão selecionado
 const orientacoes = {
     caminhao1: [
