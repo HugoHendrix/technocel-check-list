@@ -11,12 +11,57 @@
 </head>
 
 <body>
-    <h1>Technocel Check List</h1>
-    <div id="container-boas-vindas">
-        <div id="saudacao"></div>
-        <div id="data-atual"></div>
-        <div id="horario"></div>
-    </div>
+    <header>
+        <h1>Technocel Check List</h1>
+        <div id="container-boas-vindas">
+            <h2 id="saudacao"></h2>
+            <div id="data-atual"></div>
+            <p id="horario"></p>
+            <h4>📌CNPJ para Espelhamento: <span id="cnpj" class="cnpj-technocel"
+                    title="Clique para copiar">08.620.046/0001-08</span></h4>
+        </div>
+    </header>
+
+    <!-- <div>
+        <span class="aviso-jtcm" id="aviso-jtcm">
+            🚧<strong> Atenção:</strong> Lembre-se de abrir o programa auxiliar <b>JTCM</b>
+            <span style="margin:10px; cursor: pointer;" title="Clique para fechar o aviso"
+                onclick="document.getElementById('aviso-jtcm').style.display='none'">❌</span>
+        </span>
+    </div> -->
+    
+    <hr>
+
+    <section class="flash default">
+        <h2>📣Passagem de Turno</h2>
+
+
+    </section>
+
+    <section class="flash default">
+        <h2>🧩 Orientações para Início do Check List</h2>
+        <p>Selecione abaixo o tipo de caminhão ou rastreador correspondente. Após a seleção, siga as orientações exibidas para enviar corretamente as informações via WhatsApp, conforme o procedimento indicado para cada situação.</p>
+        <label for="tipo-caminhao">Selecione o tipo de caminhão:</label>
+        <select id="tipo-caminhao">
+            <option value="">-- Escolha --</option>
+            <option value="caminhao1">Caminhão Container [Dalastra/Satel]</option>
+            <option value="caminhao2">Caminhão Truck [Barra Mansa]</option>
+            <option value="caminhao3">Caminhão Carreta com baú</option>
+            <option value="omnilink1">Caminhão Omnilink Container ou carreta</option>
+            <option value="omnilink2">Caminhão Omnilink Truck</option>
+            <option value="omnilink3">Caminhão Omnilink Carreta com baú</option>
+        </select>
+        <br>
+        <button id="copiar-orientacoes" style="margin-left:10px; display:none;">Copiar orientações</button>
+
+        <div id="orientacoes" style="margin-top:20px;"></div>
+    </section>
+
+
+
+
+
+
 
     <script src="./js/index.js"></script>
 </body>

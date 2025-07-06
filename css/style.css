@@ -1,3 +1,7 @@
-#container-boas-vinda > span {
-    display: block;
-}
+
+h1 { text-align: center; font-size: 3.3rem; }
+
+.cnpj-technocel { cursor:pointer; color:#007bff; }
+.cnpj-technocel:hover { color:#0056b3; text-decoration:none; }
+
+.aviso-jtcm { margin: 20px 0; padding: 16px; border-radius: 6px; background: #fffbe6; color: #856404; border: 1px solid #ffeeba; }
