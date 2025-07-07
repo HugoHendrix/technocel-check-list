@@ -12,6 +12,7 @@
 
 <body>
     <header>
+        <!-- Boas vindas -->
         <h1>Technocel Check List</h1>
         <div id="container-boas-vindas">
             <h2 id="saudacao"></h2>
@@ -22,6 +23,7 @@
         </div>
     </header>
 
+    <!-- Lembrete para abrir o JTCM -->
     <!-- <div>
         <span class="aviso-jtcm" id="aviso-jtcm">
             🚧<strong> Atenção:</strong> Lembre-se de abrir o programa auxiliar <b>JTCM</b>
@@ -31,21 +33,35 @@
     </div> -->
 
     <hr>
-
-    <section class="flash default">
+    <!-- Passagem de Turno -->
+    <section class="flash bd-muted">
         <h2>📣Passagem de Turno</h2>
         <label for="passagem-turno">Informe aqui os check lists pendentes</label>
         <textarea name="passagem-turno" id="passagem-turno" cols="100" rows="10"
             placeholder="Exemplo: Caminhão Truck aguardando documentação, rastreador Omnilink pendente de atualização, etc."></textarea>
         <br>
-        <button class="accent" id="btn-salvar-passagem">Salvar texto</button>
-        <button class="success" id="btn-copiar-passagem">Copiar texto</button>
+        <button class="accent" id="btn-salvar-passagem">Salvar passagem</button>
+        <button class="success" id="btn-copiar-passagem">Copiar passagem</button>
     </section>
-    <script>
-       
-    </script>
 
-    <section class="flash default">
+    <hr>
+    <!-- Anotações -->
+    <section class="flash bd-muted">
+        <h2>📝 Anotações</h2>
+        <label for="anotacao">Digite suas observações aqui:</label>
+        <textarea id="anotacao" cols="100" rows="10"
+            placeholder="Exemplo: Verificar documentação do caminhão, atualizar rastreador, etc."></textarea>
+        <br>
+        <button onclick="salvarTexto('anotacao', 'anotacao')" class="accent">Salvar anotação</button>
+        <button onclick="copiarTexto('anotacao')" class="success">Copiar anotação</button>
+        <button onclick="document.getElementById('anotacao').value = ''" class="danger bd-danger">Limpar</button>
+
+
+    </section>
+    <hr>
+
+    <!-- Orientações para Iniciar o check list -->
+    <section class="flash bd-muted">
         <h2>🧩 Orientações para Início do Check List</h2>
         <p>Selecione abaixo o tipo de caminhão ou rastreador correspondente. Após a seleção, siga as orientações
             exibidas para enviar corretamente as informações via WhatsApp, conforme o procedimento indicado para cada
@@ -61,11 +77,24 @@
             <option value="omnilink3">Caminhão Omnilink Carreta com baú</option>
         </select>
         <br>
-        <button id="copiar-orientacoes" style="margin-left:10px; display:none;">Copiar orientações</button>
+        <button id="copiar-orientacoes" class="accent" style="margin-left:10px; display:none;">Copiar orientações</button>
 
         <div id="orientacoes" style="margin-top:20px;"></div>
     </section>
-
+    <hr>
+    <!-- Telefones -->
+     <section class="flash bd-accent">
+        <h2>📞 Telefones Úteis</h2>
+        <p>Para qualquer dúvida ou suporte, entre em contato com os seguintes números:</p>
+        <ul>
+            <li><strong>Trafegus WhatsApp Suporte:</strong>  <a id="telefone-trafegus" href="https://wa.me/554930267777"
+                    target="_blank" rel="noopener noreferrer" title="Chamar suporte via WhatsApp">(049) 3026-7777</a>
+            <li><strong>Tecnologia e Suporte Técnico:</strong> (21) 88888-8888</li>
+            <li><strong>Gerência de Operações:</strong> (21) 77777-7777</li>
+        </ul>
+        <p>Esses números estão disponíveis para atender suas necessidades relacionadas ao check list e outras
+            operações.</p>
+     </section>
 
 
 

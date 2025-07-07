@@ -38,41 +38,56 @@ setInterval(boasVindas, 1000);
 // Função para copiar o CNPJ ao clicar
 document.addEventListener('DOMContentLoaded', function () {
     const cnpjSpan = document.getElementById('cnpj');
-    cnpjSpan.addEventListener('click', function () {
-        navigator.clipboard.writeText(cnpjSpan.textContent.trim());
-        cnpjSpan.title = "Copiado!";
-        setTimeout(() => cnpjSpan.title = "Clique para copiar", 1000);
-    });
+    if (cnpjSpan) {
+        cnpjSpan.addEventListener('click', function () {
+            navigator.clipboard.writeText(cnpjSpan.textContent.trim());
+            cnpjSpan.title = "Copiado!";
+            setTimeout(() => cnpjSpan.title = "Clique para copiar", 1000);
+        });
+    }
 });
 
 
 // Função para salvar e copiar texto da passagem de turno
 // Salva o texto no localStorage e copia para a área de transferência
 function salvarTexto(idTextarea, storageKey) {
-    const texto = document.getElementById(idTextarea).value;
-    localStorage.setItem(storageKey, texto);
-
+    const textarea = document.getElementById(idTextarea);
+    if (textarea) {
+        const texto = textarea.value;
+        localStorage.setItem(storageKey, texto);
+    }
 }
 
 function copiarTexto(idTextarea) {
     const textarea = document.getElementById(idTextarea);
-    textarea.select();
-    document.execCommand('copy');
-
+    if (textarea) {
+        navigator.clipboard.writeText(textarea.value);
+    }
 }
 
 // Carregar texto salvo ao abrir a página
 window.addEventListener('DOMContentLoaded', () => {
     const salvo = localStorage.getItem('passagem-turno');
-    if (salvo) document.getElementById('passagem-turno').value = salvo;
+    const passagemTurno = document.getElementById('passagem-turno');
+    if (salvo && passagemTurno) passagemTurno.value = salvo;
+
+    const anotacaoSalva = localStorage.getItem('anotacao');
+    const anotacao = document.getElementById('anotacao');
+    if (anotacaoSalva && anotacao) anotacao.value = anotacaoSalva;
 });
 
-document.getElementById('btn-salvar-passagem').onclick = () => salvarTexto('passagem-turno', 'passagem-turno');
-document.getElementById('btn-copiar-passagem').onclick = () => copiarTexto('passagem-turno');
+const btnSalvarPassagem = document.getElementById('btn-salvar-passagem');
+if (btnSalvarPassagem) btnSalvarPassagem.onclick = () => salvarTexto('passagem-turno', 'passagem-turno');
+const btnCopiarPassagem = document.getElementById('btn-copiar-passagem');
+if (btnCopiarPassagem) btnCopiarPassagem.onclick = () => copiarTexto('passagem-turno');
+
+// Salvar e copiar anotacao
+const btnSalvarAnotacao = document.getElementById('btn-salvar-anotacao');
+if (btnSalvarAnotacao) btnSalvarAnotacao.onclick = () => salvarTexto('anotacao', 'anotacao');
+const btnCopiarAnotacao = document.getElementById('btn-copiar-anotacao');
+if (btnCopiarAnotacao) btnCopiarAnotacao.onclick = () => copiarTexto('anotacao');
 
 
-
-// Função para exibir orientações de acordo com o tipo de caminhão selecionado
 const orientacoes = {
     caminhao1: [
         "*Início viagem carregado ou de check list*.",
@@ -131,31 +146,44 @@ const orientacoes = {
     ]
 };
 
-const select = document.getElementById('tipo-caminhao');
-const div = document.getElementById('orientacoes');
-const btnCopiar = document.getElementById('copiar-orientacoes');
+document.addEventListener('DOMContentLoaded', function () {
+    const select = document.getElementById('tipo-caminhao');
+    const divOrientacoes = document.getElementById('orientacoes'); // Renamed for clarity
+    const btnCopiar = document.getElementById('copiar-orientacoes');
 
-select.addEventListener('change', function () {
-    const tipo = this.value;
-    if (orientacoes[tipo]) {
-        div.innerHTML = `<ol>${orientacoes[tipo].map(item => `<li>${item}</li>`).join('')}</ol>`;
-        btnCopiar.style.display = 'inline-block';
-    } else {
-        div.innerHTML = '';
-        btnCopiar.style.display = 'none';
+    // Function to update displayed instructions
+    function updateInstructions() {
+        const tipo = select.value;
+        if (orientacoes[tipo]) {
+            divOrientacoes.innerHTML = `<ol>${orientacoes[tipo].map(item => `<li>${item}</li>`).join('')}</ol>`;
+            btnCopiar.style.display = 'inline-block';
+        } else {
+            divOrientacoes.innerHTML = '';
+            btnCopiar.style.display = 'none';
+        }
     }
-});
 
-btnCopiar.addEventListener('click', function () {
-    const tipo = select.value;
-    if (orientacoes[tipo]) {
-        // Remove tags HTML para copiar texto puro
-        const temp = document.createElement('div');
-        temp.innerHTML = orientacoes[tipo].map(item => `<li>${item}</li>`).join('');
-        const texto = Array.from(temp.querySelectorAll('li')).map(li => li.textContent).join('\n');
-        navigator.clipboard.writeText(texto).then(() => {
-            btnCopiar.textContent = 'Copiado!';
-            setTimeout(() => btnCopiar.textContent = 'Copiar orientações', 1500);
-        });
-    }
+    // Call updateInstructions on initial page load in case a default option is selected
+    // and when the select value changes
+    select.addEventListener('change', updateInstructions);
+    updateInstructions(); // Call once on load
+
+    btnCopiar.addEventListener('click', function () {
+        const tipo = select.value;
+        if (orientacoes[tipo]) {
+            // Remove tags HTML for plain text copy
+            // The original approach of creating a temp div and querying li elements is robust
+            const tempDiv = document.createElement('div'); // Renamed for clarity
+            tempDiv.innerHTML = orientacoes[tipo].map(item => `<li>${item}</li>`).join('');
+            const texto = Array.from(tempDiv.querySelectorAll('li')).map(li => li.textContent).join('\n');
+
+            navigator.clipboard.writeText(texto).then(() => {
+                btnCopiar.textContent = 'Copiado!';
+                setTimeout(() => btnCopiar.textContent = 'Copiar orientações', 1500);
+            }).catch(err => {
+                console.error('Erro ao copiar texto: ', err);
+                alert('Falha ao copiar as orientações. Por favor, tente novamente.');
+            });
+        }
+    });
 });
