@@ -187,3 +187,39 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+//Ocorrências Check list
+const textoBase = `A TECHNOCEL VEM POR MEIO DESTE INFORMAR QUE NAO FOI POSSIVEL A REALIZACAO DO CHECK LIST SOLICITADO PARA A PLACA EM QUESTAO PELO MOTIVO DESCRITO ABAIXO. FAVOR SOLICITAR AO CONDUTOR QUE ASSIM QUE POSSIVEL NOS CONTATE PARA REALIZACAO DOS DEVIDOS TESTES, LEMBRANDO QUE CASO O VEICULO NAO POSSUA CHECK LIST VALIDO PARA A VIAGEM, A REGULADORA DE SINISTROS PODERA NEGATIVAR O PAGAMENTO DA CARGA DEVIDO A TAL NAO CONFORMIDADE.
+
+OBS.: AS SOLICITACOES DE CHECK LIST NAO REALIZADAS EM 48 HORAS SAO AUTOMATICAMENTE CANCELADAS, SENDO NECESSARIO ENVIO DE NOVO PEDIDO APOS ESTE PERIODO.
+`;
+
+const motivos = {
+    "CONDUTOR_VISUALIZA": "Condutor visualiza as mensagens mas não responde à central.",
+    "SEM_ESPELHAMENTO": "SEM ESPELHAMENTO: Prezados, verificamos que o veículo em questão ainda não possui espelhamento configurado. Solicitamos, por gentileza, que o espelhamento seja realizado já com a opção de Inteligência Embarcada (I.E.) liberada, a fim de viabilizar as configurações necessárias para o pleno funcionamento das configurações. Agradecemos desde já pela atenção e aguardamos o retorno.",
+    "SEM_IE": "O ESPELHAMENTO ATUAL NÃO POSSUI I.E: Prezados, Verificamos que o espelhamento atual não apresenta a opção de inteligência liberada. Seria possível verificar essa questão e refazer o espelhamento com a referida opção ativada. Dessa forma, conseguiremos realizar as configurações necessárias para o correto funcionamento das configurações."
+};
+
+document.getElementById('ocorrencia-select').addEventListener('change', function () {
+    const motivo = this.value;
+    let texto = '';
+    if (motivo && motivos[motivo]) {
+        texto = textoBase + "\nMOTIVO: " + motivos[motivo];
+    }
+    document.getElementById('ocorrencia-texto').value = texto;
+});
+
+// Orientações TB Cargo
+document.getElementById('copiar-tb-cargo').onclick = function () {
+    const texto = `Padrão Ônix de Macro Technocel Padrão / Technocel 2024
+
+    - Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar previamente;
+    - Ao iniciar viagem, enviar macro de INICIO DE VIAGEM CARREGADO (macro 3), informar todas as paradas e reinícios de viagem;
+    - Ao chegar no cliente enviar a macro CHEGADA NO CLIENTE (macro 7); e ao terminar, enviar a macro de FIM DE VIAGEM (macro 11).
+    - Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é TB CARGO, qualquer outra resposta será considerada situação de risco;
+    - Qualquer dúvida ou necessidade durante a viagem, acionar a nossa central 24 horas Technocel via:
+    https://wa.me/551733347850 - WhatsApp
+    +55 17 3334-7850 - Número para contato
+    `;
+    navigator.clipboard.writeText(texto);
+};

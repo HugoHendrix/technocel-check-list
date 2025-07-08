@@ -77,35 +77,114 @@
             <option value="omnilink3">Caminhão Omnilink Carreta com baú</option>
         </select>
         <br>
-        <button id="copiar-orientacoes" class="accent" style="margin-left:10px; display:none;">Copiar orientações</button>
+        <button id="copiar-orientacoes" class="accent" style="margin-left:10px; display:none;">Copiar
+            orientações</button>
 
         <div id="orientacoes" style="margin-top:20px;"></div>
     </section>
     <hr>
     <!-- Telefones -->
-     <section class="flash bd-accent">
+    <section class="flash bd-accent">
         <h2>📞 Telefones Úteis</h2>
         <p>Para qualquer dúvida ou suporte, entre em contato com os seguintes números:</p>
         <ul>
-            <li><strong>Trafegus WhatsApp Suporte:</strong>  <a id="telefone-trafegus" href="https://wa.me/554930267777"
+            <li><strong>Trafegus WhatsApp Suporte:</strong> <a id="telefone-trafegus" href="https://wa.me/554930267777"
                     target="_blank" rel="noopener noreferrer" title="Chamar suporte via WhatsApp">(049) 3026-7777</a>
             <li><strong>Sascar Suporte Técnico:</strong> 0800 017 7202</li>
-            <li><strong>Sascar Suporte WhatsApp:</strong> <a href="https://wa.me/551140026004" target="_blank" rel="noopener noreferrer">4002-6004</a></li>
-            <li><strong>Onix WhatsApp:</strong> <a href="https://wa.me/5543999140020" target="_blank" rel="noopener noreferrer">(43) 99914-0020</a></li>
-            <li><strong>Omnilink WhatsApp:</strong> <a href="https://wa.me/551140403108" target="_blank" rel="noopener noreferrer">(11) 4040-3108</a></li>
+            <li><strong>Sascar Suporte WhatsApp:</strong> <a href="https://wa.me/551140026004" target="_blank"
+                    rel="noopener noreferrer">4002-6004</a></li>
+            <li><strong>Onix WhatsApp:</strong> <a href="https://wa.me/5543999140020" target="_blank"
+                    rel="noopener noreferrer">(43) 99914-0020</a></li>
+            <li><strong>Omnilink WhatsApp:</strong> <a href="https://wa.me/551140403108" target="_blank"
+                    rel="noopener noreferrer">(11) 4040-3108</a></li>
             <li><strong>Omnilink Atendimento Geral:</strong> 4003-6754</li>
             <li><strong>Autotrac Central de Atendimento:</strong> (61) 3961-7600</li>
-            <li><strong>Positron WhatsApp:</strong><a href="https://wa.me/5511963990556" target="_blank" rel="noopener noreferrer"> 011 96399-0556</a></li>
+            <li><strong>Positron WhatsApp:</strong><a href="https://wa.me/5511963990556" target="_blank"
+                    rel="noopener noreferrer"> 011 96399-0556</a></li>
             <li><strong>Sighra:</strong> (11) 3662-5420</li>
         </ul>
         <p>Esses números estão disponíveis para atender suas necessidades relacionadas ao check list e outras
             operações.</p>
-     </section>
+    </section>
 
+    <!-- Seçãode contra Senha -->
+    <section>
+        <section class="flash bd-muted">
+            <h2>🔒 Contra Senha das Empresas</h2>
+            <ul>
+                <li><strong>Araguaia</strong> - Parada em aduana - todas as tecnologias</li>
+                <li><strong>Grupo Jura Transportes</strong> - JURA</li>
+                <li><strong>Dalastra</strong>
+                    <ul>
+                        <li>Autotrac: 4 primeiros dígitos do CPF</li>
+                        <li>Sascar: Data do dia</li>
+                        <li>Onix: Parada em aduana</li>
+                        <li>Omnilink: Não negativo</li>
+                    </ul>
+                </li>
+                <li><strong>Lactvit Laticínios Ltda</strong>
+                    <ul>
+                        <li>Onixsat: Ponto Visa de Controle</li>
+                    </ul>
+                </li>
+                <li><strong>Boi Mix</strong>
+                    <ul>
+                        <li>Sascar: Data do dia</li>
+                        <li>Onixsat: Parada em aduana</li>
+                        <li>Omnilink: Não negativo</li>
+                        <li>Autotrac: Data do dia</li>
+                    </ul>
+                </li>
+                <li><strong>Configuração Araguaia ONIX</strong></li>
+                <li><strong>Technocel padrão Envio</strong></li>
+                <li><strong>Technocel 2024</strong></li>
+                <li><strong>Beef Master</strong>
+                    <ul>
+                        <li>Sascar: Data do dia</li>
+                        <li>Onix: Parada em aduana</li>
+                        <li>Omnilink: Macro 13 não negativa</li>
+                        <li>Autotrac: Horário de Brasília</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </section>
 
+    <!-- Seção de ocorrências -->
+    <section class="flash bd-muted">
+        <h2>🚩 Ocorrências de Check List Não Realizado</h2>
+        <label for="ocorrencia-select">Selecione o motivo da ocorrência:</label>
+        <select id="ocorrencia-select">
+            <option value="">-- Escolha uma opção --</option>
+            <option value="CONDUTOR_VISUALIZA">Condutor visualiza as mensagens mas não responde à central</option>
+            <option value="SEM_ESPELHAMENTO">Sem espelhamento</option>
+            <option value="SEM_IE">O espelhamento atual não possui I.E</option>
+        </select>
+        <br><br>
+        <label for="ocorrencia-texto">Texto da ocorrência:</label>
+        <textarea id="ocorrencia-texto" cols="100" rows="8" readonly></textarea>
+        <br>
+        <button onclick="copiarTexto('ocorrencia-texto')" class="success">Copiar ocorrência</button>
+    </section>
 
+    <hr>
+    <!-- Seção de Orientações TB Cargo -->
+      <section class="flash bd-muted">
+        <h2>🚚 Orientações TB Cargo</h2>
+        <p><strong>Padrão Ônix de Macro Technocel Padrão / Technocel 2024</strong></p>
+        <ul>
+            <li>Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar previamente;</li>
+            <li>Ao iniciar viagem, enviar macro de <strong>INICIO DE VIAGEM CARREGADO (macro 3)</strong>, informar todas as paradas e reinícios de viagem;</li>
+            <li>Ao chegar no cliente enviar a macro <strong>CHEGADA NO CLIENTE (macro 7)</strong>; e ao terminar, enviar a macro de <strong>FIM DE VIAGEM (macro 11)</strong>.</li>
+            <li>Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é <strong>TB CARGO</strong>, qualquer outra resposta será considerada situação de risco;</li>
+            <li>Qualquer dúvida ou necessidade durante a viagem, acionar a nossa central 24 horas Technocel via:<br>
+                <a href="https://wa.me/551733347850" target="_blank" rel="noopener noreferrer">WhatsApp</a> ou <strong>+55 17 3334-7850</strong>
+            </li>
+        </ul>
+        <button id="copiar-tb-cargo" class="accent">Copiar orientações TB Cargo</button>
+    </section>
 
-
+   
 
     <script src="./js/index.js"></script>
 </body>
