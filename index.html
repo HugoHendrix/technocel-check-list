@@ -11,7 +11,33 @@
 </head>
 
 <body>
-    <header>
+    <!-- Menu de navegação -->
+    <menu>
+        <nav id="menu-lateral" class="containerNav">
+            <ul>
+                <h3>Menu</h3>
+                <li><a href="#passagem-turno">Passagem de Turno</a></li>
+                <li><a href="#anotacoes">Anotações</a></li>
+            
+                <li><a href="#telefones">Telefones Úteis</a></li>
+                
+                <li><a href="#ocorrencias">Ocorrências</a></li>
+                <li><a href="#tb-cargo">TB Cargo</a></li>
+                <li> <a href="#">Check list</a>
+                    <ul>
+                        <li><a href="#orientacoes-checklist">Orientações Check List</a></li>
+                        <li><a href="#check-list-omnilink">Check List Omnilink</a></li>
+                        <li><a href="#check-list-autotrac">Check List Autotrac</a></li>
+                        <li><a href="#check-list-onix">Check List Onix</a></li>
+                        <li><a href="#contra-senha">Contra Senha</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </menu>
+
+    <!-- Cabeçalho -->
+    <header id="boas-vindas">
         <!-- Boas vindas -->
         <h1>Technocel Check List</h1>
         <div id="container-boas-vindas">
@@ -22,31 +48,22 @@
                     title="Clique para copiar">08.620.046/0001-08</span></h4>
         </div>
     </header>
-
-    <!-- Lembrete para abrir o JTCM -->
-    <!-- <div>
-        <span class="aviso-jtcm" id="aviso-jtcm">
-            🚧<strong> Atenção:</strong> Lembre-se de abrir o programa auxiliar <b>JTCM</b>
-            <span style="margin:10px; cursor: pointer;" title="Clique para fechar o aviso"
-                onclick="document.getElementById('aviso-jtcm').style.display='none'">❌</span>
-        </span>
-    </div> -->
-
     <hr>
+    
     <!-- Passagem de Turno -->
-    <section class="flash bd-muted">
+    <section class="flash bd-muted" id="passagem-turno">
         <h2>📣Passagem de Turno</h2>
         <label for="passagem-turno">Informe aqui os check lists pendentes</label>
-        <textarea name="passagem-turno" id="passagem-turno" cols="100" rows="10"
+        <textarea name="passagem-turno" id="passagem-turno-textarea" cols="100" rows="10"
             placeholder="Exemplo: Caminhão Truck aguardando documentação, rastreador Omnilink pendente de atualização, etc."></textarea>
         <br>
         <button class="accent" id="btn-salvar-passagem">Salvar passagem</button>
         <button class="success" id="btn-copiar-passagem">Copiar passagem</button>
     </section>
-
     <hr>
+
     <!-- Anotações -->
-    <section class="flash bd-muted">
+    <section class="flash bd-muted" id="anotacoes">
         <h2>📝 Anotações</h2>
         <label for="anotacao">Digite suas observações aqui:</label>
         <textarea id="anotacao" cols="100" rows="10"
@@ -55,36 +72,11 @@
         <button onclick="salvarTexto('anotacao', 'anotacao')" class="accent">Salvar anotação</button>
         <button onclick="copiarTexto('anotacao')" class="success">Copiar anotação</button>
         <button onclick="document.getElementById('anotacao').value = ''" class="danger bd-danger">Limpar</button>
-
-
     </section>
     <hr>
 
-    <!-- Orientações para Iniciar o check list -->
-    <section class="flash bd-muted">
-        <h2>🧩 Orientações para Início do Check List</h2>
-        <p>Selecione abaixo o tipo de caminhão ou rastreador correspondente. Após a seleção, siga as orientações
-            exibidas para enviar corretamente as informações via WhatsApp, conforme o procedimento indicado para cada
-            situação.</p>
-        <label for="tipo-caminhao">Selecione o tipo de caminhão:</label>
-        <select id="tipo-caminhao">
-            <option value="">-- Escolha --</option>
-            <option value="caminhao1">Caminhão Container [Dalastra/Satel]</option>
-            <option value="caminhao2">Caminhão Truck [Barra Mansa]</option>
-            <option value="caminhao3">Caminhão Carreta com baú</option>
-            <option value="omnilink1">Caminhão Omnilink Container ou carreta</option>
-            <option value="omnilink2">Caminhão Omnilink Truck</option>
-            <option value="omnilink3">Caminhão Omnilink Carreta com baú</option>
-        </select>
-        <br>
-        <button id="copiar-orientacoes" class="accent" style="margin-left:10px; display:none;">Copiar
-            orientações</button>
-
-        <div id="orientacoes" style="margin-top:20px;"></div>
-    </section>
-    <hr>
     <!-- Telefones -->
-    <section class="flash bd-accent">
+    <section class="flash bd-accent" id="telefones">
         <h2>📞 Telefones Úteis</h2>
         <p>Para qualquer dúvida ou suporte, entre em contato com os seguintes números:</p>
         <ul>
@@ -106,52 +98,10 @@
         <p>Esses números estão disponíveis para atender suas necessidades relacionadas ao check list e outras
             operações.</p>
     </section>
-
-    <!-- Seçãode contra Senha -->
-    <section>
-        <section class="flash bd-muted">
-            <h2>🔒 Contra Senha das Empresas</h2>
-            <ul>
-                <li><strong>Araguaia</strong> - Parada em aduana - todas as tecnologias</li>
-                <li><strong>Grupo Jura Transportes</strong> - JURA</li>
-                <li><strong>Dalastra</strong>
-                    <ul>
-                        <li>Autotrac: 4 primeiros dígitos do CPF</li>
-                        <li>Sascar: Data do dia</li>
-                        <li>Onix: Parada em aduana</li>
-                        <li>Omnilink: Não negativo</li>
-                    </ul>
-                </li>
-                <li><strong>Lactvit Laticínios Ltda</strong>
-                    <ul>
-                        <li>Onixsat: Ponto Visa de Controle</li>
-                    </ul>
-                </li>
-                <li><strong>Boi Mix</strong>
-                    <ul>
-                        <li>Sascar: Data do dia</li>
-                        <li>Onixsat: Parada em aduana</li>
-                        <li>Omnilink: Não negativo</li>
-                        <li>Autotrac: Data do dia</li>
-                    </ul>
-                </li>
-                <li><strong>Configuração Araguaia ONIX</strong></li>
-                <li><strong>Technocel padrão Envio</strong></li>
-                <li><strong>Technocel 2024</strong></li>
-                <li><strong>Beef Master</strong>
-                    <ul>
-                        <li>Sascar: Data do dia</li>
-                        <li>Onix: Parada em aduana</li>
-                        <li>Omnilink: Macro 13 não negativa</li>
-                        <li>Autotrac: Horário de Brasília</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-    </section>
+    <hr>
 
     <!-- Seção de ocorrências -->
-    <section class="flash bd-muted">
+    <section class="flash bd-muted" id="ocorrencias">
         <h2>🚩 Ocorrências de Check List Não Realizado</h2>
         <label for="ocorrencia-select">Selecione o motivo da ocorrência:</label>
         <select id="ocorrencia-select">
@@ -166,25 +116,339 @@
         <br>
         <button onclick="copiarTexto('ocorrencia-texto')" class="success">Copiar ocorrência</button>
     </section>
-
     <hr>
+
     <!-- Seção de Orientações TB Cargo -->
-      <section class="flash bd-muted">
+    <section class="flash bd-muted" id="tb-cargo">
         <h2>🚚 Orientações TB Cargo</h2>
         <p><strong>Padrão Ônix de Macro Technocel Padrão / Technocel 2024</strong></p>
         <ul>
-            <li>Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar previamente;</li>
-            <li>Ao iniciar viagem, enviar macro de <strong>INICIO DE VIAGEM CARREGADO (macro 3)</strong>, informar todas as paradas e reinícios de viagem;</li>
-            <li>Ao chegar no cliente enviar a macro <strong>CHEGADA NO CLIENTE (macro 7)</strong>; e ao terminar, enviar a macro de <strong>FIM DE VIAGEM (macro 11)</strong>.</li>
-            <li>Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é <strong>TB CARGO</strong>, qualquer outra resposta será considerada situação de risco;</li>
+            <li>Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar
+                previamente;</li>
+            <li>Ao iniciar viagem, enviar macro de <strong>INICIO DE VIAGEM CARREGADO (macro 3)</strong>, informar todas
+                as paradas e reinícios de viagem;</li>
+            <li>Ao chegar no cliente enviar a macro <strong>CHEGADA NO CLIENTE (macro 7)</strong>; e ao terminar, enviar
+                a macro de <strong>FIM DE VIAGEM (macro 11)</strong>.</li>
+            <li>Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é
+                <strong>TB CARGO</strong>, qualquer outra resposta será considerada situação de risco;
+            </li>
             <li>Qualquer dúvida ou necessidade durante a viagem, acionar a nossa central 24 horas Technocel via:<br>
-                <a href="https://wa.me/551733347850" target="_blank" rel="noopener noreferrer">WhatsApp</a> ou <strong>+55 17 3334-7850</strong>
+                <a href="https://wa.me/551733347850" target="_blank" rel="noopener noreferrer">WhatsApp</a> ou
+                <strong>+55 17 3334-7850</strong>
             </li>
         </ul>
         <button id="copiar-tb-cargo" class="accent">Copiar orientações TB Cargo</button>
     </section>
+    <hr>
 
-   
+    <!-- Orientações para Iniciar o check list -->
+    <section class="flash bd-muted" id="orientacoes-checklist">
+        <h2>🧩 Orientações para Início do Check List</h2>
+        <p>Selecione abaixo o tipo de caminhão ou rastreador correspondente. Após a seleção, siga as orientações
+            exibidas para enviar corretamente as informações via WhatsApp, conforme o procedimento indicado para cada
+            situação.</p>
+        <label for="tipo-caminhao">Selecione o tipo de caminhão:</label>
+        <select id="tipo-caminhao">
+            <option value="">-- Escolha --</option>
+            <option value="caminhao1">Caminhão Container [Dalastra/Satel]</option>
+            <option value="caminhao2">Caminhão Truck [Barra Mansa]</option>
+            <option value="caminhao3">Caminhão Carreta com baú</option>
+            <option value="omnilink1">Caminhão Omnilink Container ou carreta</option>
+            <option value="omnilink2">Caminhão Omnilink Truck</option>
+            <option value="omnilink3">Caminhão Omnilink Carreta com baú</option>
+        </select>
+        <br>
+        <button id="copiar-orientacoes" class="accent" style="margin-left:10px; display:none;">Copiar
+            orientações</button>
+
+        <div id="orientacoes" style="margin-top:20px;"></div>
+    </section>
+    <hr>
+
+    <!-- Orientaçãode check list Omnilnk-->
+    <section class="flash bd-muted" id="check-list-omnilink">
+        <h2>🛰️ Instruções para Check List Omnilink</h2>
+        <ol>
+            <li><strong>Testar Funções Básicas do Veículo:</strong>
+                <ul>
+                    <li>Teste o teclado do Omnilink.</li>
+                    <li>Peça ao motorista para realizar uma macro.</li>
+                    <li>Coloque o veículo em trânsito.</li>
+                    <li>Acione o botão de pânico.</li>
+                    <li>Abra a porta do motorista.</li>
+                    <li>Desengate o veículo.</li>
+                </ul>
+            </li>
+            <li><strong>Consultar Violações e Mensagens:</strong>
+                <ul>
+                    <li>Acesse <em>Históricos &gt; Alarme</em> para verificar se as violações foram geradas.</li>
+                    <li>Acesse <em>Mensagens &gt; Mensagens Recebidas</em> para consultar as mensagens enviadas.</li>
+                </ul>
+            </li>
+            <li><strong>Ações de Correção (se houver violações):</strong>
+                <ul>
+                    <li>Solicite ao motorista que engate e feche a porta do motorista.</li>
+                    <li>Peça para abrir a porta carona.</li>
+                    <li>Confirme se está com bloqueio e sirene.</li>
+                    <li>Se o veículo tiver baú, coloque-o em trânsito e peça para abrir o baú sem enviar comando, para
+                        testar a trava.</li>
+                    <li>Envie o comando de desbloqueio, coloque o veículo em local autorizado (menu chegada) e envie o
+                        comando de abrir baú.</li>
+                    <li>Confirme se o baú abriu corretamente.</li>
+                </ul>
+            </li>
+            <li><strong>Verificar Retorno da Antena:</strong>
+                <ul>
+                    <li>Verifique alarmes, tele-eventos e tele-comandos.</li>
+                    <li>Se estiver tudo certo, aparecerá "OK"; caso contrário, aparecerá erro.</li>
+                </ul>
+            </li>
+            <li><strong>Finalização:</strong>
+                <ul>
+                    <li>Ao terminar, envie a desativação.</li>
+                    <li>Oriente o motorista sobre a contra senha.</li>
+                </ul>
+            </li>
+        </ol>
+        <h3>🚚 Embarque de Macros Omnilink</h3>
+        <ol>
+            <li><strong>Envio de Comandos:</strong>
+                <ul>
+                    <li>Liberar o uso de funções programáveis RI.</li>
+                    <li>Inibir funções programáveis.</li>
+                </ul>
+            </li>
+            <li><strong>Configuração das Características do Veículo:</strong>
+                <ul>
+                    <li>Acesse a opção Comunicação.</li>
+                    <li>Defina o comportamento do veículo nas exceções.</li>
+                    <li>No perfil, insira o nome da empresa (ex: DALASTRA).</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Transmissão de Teleeventos:</strong>
+                <ul>
+                    <li>No perfil, insira o nome da empresa.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Configurações de Segurança:</strong>
+                <ul>
+                    <li>Acesse a opção de Segurança.</li>
+                    <li>No perfil, insira o nome da empresa.</li>
+                    <li>Verifique e habilite as opções necessárias.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Opções Gerais de Modo Interativo:</strong>
+                <ul>
+                    <li>No perfil, insira o nome da empresa.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Atuadores:</strong>
+                <ul>
+                    <li>No perfil, insira o nome da empresa.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Senha do Motorista:</strong>
+                <ul>
+                    <li>No perfil, insira o nome da empresa.</li>
+                    <li>Transmita a senha do motorista (pode ser alterada se necessário).</li>
+                </ul>
+            </li>
+            <li><strong>Configuração de Histórico:</strong>
+                <ul>
+                    <li>No perfil, insira o nome da empresa.</li>
+                    <li>Selecione envio imediato.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Parâmetros do Veículo:</strong>
+                <ul>
+                    <li>Selecione a seção Modo de Economia.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Mensagens:</strong>
+                <ul>
+                    <li>Transmita mensagens pré-definidas.</li>
+                    <li>Utilize o perfil TCELL 4484.</li>
+                    <li>Clique em <strong>Transmitir</strong>.</li>
+                </ul>
+            </li>
+        </ol>
+        <h3>📡 Teste na Antena Satelital</h3>
+        <ol>
+            <li>Acesse o menu superior do veículo e clique em <strong>Teste de Comunicação</strong>.</li>
+            <li>Localize a placa do veículo e marque a opção <strong>Teste Satélite</strong>.</li>
+            <li>Clique em <strong>Transmitir</strong>.</li>
+        </ol>
+    </section>
+    <hr>
+
+    <!-- Orientações check list Autotrac -->
+    <section class="flash bd-muted" id="check-list-autotrac">
+        <h2>🛰️ Instruções para Check List Autotrac</h2>
+        <ol>
+            <li><strong>Confirme se há um pedido de check list.</strong></li>
+            <li><strong>Na Autotrac:</strong>
+                <ul>
+                    <li>Ative o <strong>TESTE</strong> do botão de pânico.</li>
+                    <li>Confirme com o motorista se o veículo é <strong>contêiner</strong> ou <strong>baú</strong>.</li>
+                    <li>Envie o comando de início de check list <strong>com ou sem baú</strong> conforme a resposta
+                        (geralmente é contêiner, ou seja, sem baú).</li>
+                    <li>Peça mensagem de teste ao motorista.</li>
+                    <li>Oriente o motorista sobre o procedimento de responder a <strong>contra senha do "VIAGEM SEGUE
+                            NORMAL"</strong>.</li>
+                    <li><em>Opcional:</em> Envie os comandos de <strong>proibir engate</strong> e <strong>proibir porta
+                            carona</strong>.</li>
+                    <li>Verifique violações no histórico (últimos comandos e alertas de OBC).</li>
+                    <li>Solicite tabela de status e verifique se ela veio vazia.</li>
+                </ul>
+            </li>
+            <li><strong>Após as verificações:</strong>
+                <ul>
+                    <li>Envie <strong>fim de check list</strong> com ou sem baú, conforme o caso.</li>
+                    <li>Liberar veículo com sirene.</li>
+                </ul>
+            </li>
+            <li>Na aba do <strong>Trafegus</strong>, atenda a solicitação de check list.</li>
+            <li>Verifique no terminal os sensores gerados e instalados.</li>
+        </ol>
+    </section>
+    <hr>
+
+    <!-- Orientação check list Onix -->
+    <section class="flash bd-muted" id="check-list-onix">
+        <h2>🛰️ Instruções para Check List Onix</h2>
+
+        <h4>Checar Inteligência Embarcada (IE)</h4>
+        <ul>
+            <li>Verifique se está com a inteligência embarcada (Opção: <strong>Gerência Inteligência
+                    Embarcada</strong>).</li>
+            <li>Caso não tenha: Refazer o espelhamento com a <strong>IE liberada</strong>.</li>
+        </ul>
+
+        <h4>Verificar Senha do Motorista</h4>
+        <ul>
+            <li>Clique em <strong>Administração de Motoristas</strong>.</li>
+            <li>Caso não tenha senha, será necessário embarcar a senha do motorista.</li>
+            <li>Clique na bolinha com o nome do motorista.</li>
+            <li>Selecione o motorista e a empresa.</li>
+            <li>Para embarcar, clique no ícone <strong>+</strong>.</li>
+            <li>Clique em <strong>Próximo</strong>.</li>
+            <li>Clique no ícone <strong>+</strong> novamente.</li>
+            <li>Clique em <strong>Próximo</strong> mais 2x.</li>
+        </ul>
+
+        <h4>Início do Check List</h4>
+        <ul>
+            <li>Solicite ao motorista que informe o início do check list.</li>
+            <li>Transmita a senha ao motorista.</li>
+            <li>Realize as verificações de violações nos sensores e atuadores.</li>
+            <li>Verifique o botão de pânico.</li>
+            <li>Confirme o bloqueio/sirene.</li>
+            <li>Solicite a mensagem de teste.</li>
+            <li>Peça para o motorista fechar tudo e engatar.</li>
+            <li>Envie o desbloqueio e consulte se está tudo fechado, apenas com a ignição ligada.</li>
+        </ul>        
+
+        <h2>EMBARQUE DE MACROS ONIX SAT</h2>
+
+        <h4>Adicionar Veículo ao Grupo</h4>
+        <ul>
+            <li>Caso o veículo não esteja disponível no grid, clique em <strong>Administração</strong> e selecione
+                <strong>Adicionar veículo ao grupo</strong>.</li>
+        </ul>
+
+        <h4>Limpar Inteligência Embarcada</h4>
+        <ul>
+            <li>Clique com o botão direito e vá para <strong>Inteligência Embarcada</strong>.</li>
+            <li>Selecione <strong>Limpar Inteligência Embarcada</strong>.</li>
+            <li class="section-note"><strong>Atenção:</strong> Cuidado ao clicar nas opções, se clicar errado, o padrão
+                Onix será embarcado novamente.</li>
+            <li>Primeira opção: <strong>SIM</strong>.</li>
+            <li>Segunda opção: <strong>NÃO</strong>.</li>
+            <li>Aguarde o semáforo ficar verde e clique em <strong>Atualizar Dados</strong>.</li>
+        </ul>
+
+        <h4>Configuração de Macros</h4>
+        <ul>
+            <li>Clique na aba <strong>Macros</strong>.</li>
+            <li>Clique no ícone <strong>+</strong>.</li>
+            <li><strong>Grupo 1:</strong> Sempre inserir <strong>Technocel Padrão</strong>.</li>
+            <li>Selecione <strong>Macros Sequenciadas</strong>.</li>
+            <li>Clique no ícone de <strong>...</strong>.</li>
+            <li>Selecione o nome da empresa (Ex.: DALASTRA/SATEL (SEM BAU)).</li>
+            <li>Opção <strong>SIM</strong>.</li>
+            <li>Clique em <strong>Próximo</strong>.</li>
+            <li>Clique em <strong>Li e Concordo</strong>.</li>
+            <li>Clique no ícone <strong>+</strong>.</li>
+            <li>Clique no ícone de <strong>...</strong>.</li>
+            <li>Selecione novamente o nome da empresa com Raio de Manobra (Ex.: DALASTRA/SATEL SAÍDA DE RAIO DE MANOBRA
+                (S/BAU)).</li>
+            <li>Clique em <strong>OK</strong> e <strong>Salvar</strong>.</li>
+            <li>Dê um duplo clique no nome da configuração.</li>
+            <li>Clique em <strong>Próximo</strong> e depois em <strong>Finalizar</strong>.</li>
+            <li>Avance para as próximas etapas e aguarde o embarque da configuração.</li>
+            <li class="section-note"><strong>Importante:</strong> Certifique-se de que o sinal está atualizado e em
+                <strong>GSM</strong>.</li>
+        </ul>
+
+        <h4>Envio dos Comandos</h4>
+        <ul>
+            <li>Após configurar os macros, envie os seguintes comandos:</li>
+            <li><strong>Habilitar - Portas Mot/Car</strong>.</li>
+            <li><strong>Habilitar - Painel</strong>.</li>
+            <li><strong>Habilitar - Desengate</strong> (testar primeiro, não testar junto com o baú).</li>
+            <li><strong>Habilitar - Baú</strong> (caso tenha).</li>
+        </ul>
+    </section>
+    <hr>
+
+        <!-- Seção de contra Senha -->
+    <section class="flash bd-muted" id="contra-senha">
+        <h2>🔒 Contra Senha das Empresas</h2>
+        <ul>
+            <li><strong>Araguaia</strong> - Parada em aduana - todas as tecnologias</li>
+            <li><strong>Grupo Jura Transportes</strong> - JURA</li>
+            <li><strong>Dalastra</strong>
+                <ul>
+                    <li>Autotrac: 4 primeiros dígitos do CPF</li>
+                    <li>Sascar: Data do dia</li>
+                    <li>Onix: Parada em aduana</li>
+                    <li>Omnilink: Não negativo</li>
+                </ul>
+            </li>
+            <li><strong>Lactvit Laticínios Ltda</strong>
+                <ul>
+                    <li>Onixsat: Ponto Visa de Controle</li>
+                </ul>
+            </li>
+            <li><strong>Boi Mix</strong>
+                <ul>
+                    <li>Sascar: Data do dia</li>
+                    <li>Onixsat: Parada em aduana</li>
+                    <li>Omnilink: Não negativo</li>
+                    <li>Autotrac: Data do dia</li>
+                </ul>
+            </li>
+            <li><strong>Beef Master</strong>
+                <ul>
+                    <li>Sascar: Data do dia</li>
+                    <li>Onix: Parada em aduana</li>
+                    <li>Omnilink: Não negativo</li>
+                    <li>Autotrac: Horário de Brasília</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    
+    <hr>
+
+
 
     <script src="./js/index.js"></script>
 </body>
