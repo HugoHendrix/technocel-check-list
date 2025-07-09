@@ -55,7 +55,7 @@ function salvarTexto(idTextarea, storageKey) {
         const texto = textarea.value;
         localStorage.setItem(storageKey, texto);
         console.log(`[SALVAR] Texto salvo para ${storageKey}:`, texto); // Para depuração
-        alert('Conteúdo salvo com sucesso!'); // Feedback visual
+        
     } else {
         console.error(`[ERRO SALVAR] Textarea com ID '${idTextarea}' não encontrada.`);
     }
@@ -67,7 +67,7 @@ function copiarTexto(idTextarea) {
         navigator.clipboard.writeText(textarea.value)
             .then(() => {
                 console.log('[COPIAR] Texto copiado com sucesso!'); // Para depuração
-                alert('Conteúdo copiado para a área de transferência!'); // Feedback visual
+                
             })
             .catch(err => {
                 console.error('[ERRO COPIAR] Erro ao copiar texto:', err);
