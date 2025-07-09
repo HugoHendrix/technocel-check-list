@@ -52,9 +52,9 @@
     <hr>
     
     <!-- Passagem de Turno -->
-    <section class="flash bd-muted" id="passagem-turno">
+   <section class="flash bd-muted" id="passagem-turno-section">
         <h2>📣Passagem de Turno</h2>
-        <label for="passagem-turno">Informe aqui os check lists pendentes</label>
+        <label for="passagem-turno-textarea">Informe aqui os check lists pendentes:</label>
         <textarea name="passagem-turno" id="passagem-turno-textarea" cols="100" rows="10"
             placeholder="Exemplo: Caminhão Truck aguardando documentação, rastreador Omnilink pendente de atualização, etc."></textarea>
         <br>
@@ -63,17 +63,15 @@
     </section>
     <hr>
 
-    <!-- Anotações -->
-    <section class="flash bd-muted" id="anotacoes">
-        <h2>📝 Anotações</h2>
-        <label for="anotacao">Digite suas observações aqui:</label>
-        <textarea id="anotacao" cols="100" rows="10"
-            placeholder="Exemplo: Verificar documentação do caminhão, atualizar rastreador, etc."></textarea>
+    <section class="flash bd-muted" id="anotacoes-section"> <h2>📝 Anotações</h2>
+        <label for="anotacao-textarea">Digite suas observações aqui:</label>
+        <textarea id="anotacao-textarea" cols="100" rows="10" placeholder="Exemplo: Verificar documentação do caminhão, atualizar rastreador, etc."></textarea>
         <br>
-        <button onclick="salvarTexto('anotacao', 'anotacao')" class="accent">Salvar anotação</button>
-        <button onclick="copiarTexto('anotacao')" class="success">Copiar anotação</button>
-        <button onclick="document.getElementById('anotacao').value = ''" class="danger bd-danger">Limpar</button>
+        <button onclick="salvarTexto('anotacao-textarea', 'anotacao-data')" class="accent">Salvar anotação</button>
+        <button onclick="copiarTexto('anotacao-textarea')" class="success">Copiar anotação</button>
+        <button onclick="document.getElementById('anotacao-textarea').value = ''" class="danger bd-danger">Limpar</button>
     </section>
+    <hr>
     <hr>
 
     <!-- Telefones -->

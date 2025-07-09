@@ -48,45 +48,95 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Função para salvar e copiar texto da passagem de turno
-// Salva o texto no localStorage e copia para a área de transferência
+// Função para salvar e copiar texto
 function salvarTexto(idTextarea, storageKey) {
     const textarea = document.getElementById(idTextarea);
     if (textarea) {
         const texto = textarea.value;
         localStorage.setItem(storageKey, texto);
+        console.log(`[SALVAR] Texto salvo para ${storageKey}:`, texto); // Para depuração
+        alert('Conteúdo salvo com sucesso!'); // Feedback visual
+    } else {
+        console.error(`[ERRO SALVAR] Textarea com ID '${idTextarea}' não encontrada.`);
     }
 }
 
 function copiarTexto(idTextarea) {
     const textarea = document.getElementById(idTextarea);
     if (textarea) {
-        navigator.clipboard.writeText(textarea.value);
+        navigator.clipboard.writeText(textarea.value)
+            .then(() => {
+                console.log('[COPIAR] Texto copiado com sucesso!'); // Para depuração
+                alert('Conteúdo copiado para a área de transferência!'); // Feedback visual
+            })
+            .catch(err => {
+                console.error('[ERRO COPIAR] Erro ao copiar texto:', err);
+                alert('Falha ao copiar. Seu navegador pode não suportar ou permissão negada.'); // Feedback visual
+            });
+    } else {
+        console.error(`[ERRO COPIAR] Textarea com ID '${idTextarea}' não encontrada para copiar.`);
     }
 }
 
 // Carregar texto salvo ao abrir a página
 window.addEventListener('DOMContentLoaded', () => {
-    const salvo = localStorage.getItem('passagem-turno');
-    const passagemTurno = document.getElementById('passagem-turno');
-    if (salvo && passagemTurno) passagemTurno.value = salvo;
+    // Carregar Passagem de Turno
+    const salvoPassagem = localStorage.getItem('passagem-turno-data'); // Nova chave de storage
+    const passagemTurnoTextarea = document.getElementById('passagem-turno-textarea');
+    if (salvoPassagem && passagemTurnoTextarea) {
+        passagemTurnoTextarea.value = salvoPassagem;
+        console.log('Passagem de Turno carregada do localStorage.');
+    }
 
-    const anotacaoSalva = localStorage.getItem('anotacao');
-    const anotacao = document.getElementById('anotacao');
-    if (anotacaoSalva && anotacao) anotacao.value = anotacaoSalva;
+    // Carregar Anotações
+    const anotacaoSalva = localStorage.getItem('anotacao-data'); // Nova chave de storage
+    const anotacaoTextarea = document.getElementById('anotacao-textarea');
+    if (anotacaoSalva && anotacaoTextarea) {
+        anotacaoTextarea.value = anotacaoSalva;
+        console.log('Anotação carregada do localStorage.');
+    }
 });
 
+// Anexar event listeners para a seção "Passagem de Turno"
 const btnSalvarPassagem = document.getElementById('btn-salvar-passagem');
-if (btnSalvarPassagem) btnSalvarPassagem.onclick = () => salvarTexto('passagem-turno', 'passagem-turno');
+if (btnSalvarPassagem) {
+    btnSalvarPassagem.addEventListener('click', () => {
+        salvarTexto('passagem-turno-textarea', 'passagem-turno-data');
+    });
+}
+
 const btnCopiarPassagem = document.getElementById('btn-copiar-passagem');
-if (btnCopiarPassagem) btnCopiarPassagem.onclick = () => copiarTexto('passagem-turno');
+if (btnCopiarPassagem) {
+    btnCopiarPassagem.addEventListener('click', () => {
+        copiarTexto('passagem-turno-textarea');
+    });
+}
 
-// Salvar e copiar anotacao
-const btnSalvarAnotacao = document.getElementById('btn-salvar-anotacao');
-if (btnSalvarAnotacao) btnSalvarAnotacao.onclick = () => salvarTexto('anotacao', 'anotacao');
-const btnCopiarAnotacao = document.getElementById('btn-copiar-anotacao');
-if (btnCopiarAnotacao) btnCopiarAnotacao.onclick = () => copiarTexto('anotacao');
+// NOTA: Para a seção 'Anotações', você já tem os 'onclick' nos botões HTML.
+// Se quiser mudar para 'addEventListener' (que é a prática recomendada),
+// você precisaria remover os 'onclick' do HTML e adicionar listeners aqui, assim:
+/*
+const btnSalvarAnotacao = document.getElementById('btn-salvar-anotacao-btn'); // Crie um ID para o botão Salvar Anotação
+if (btnSalvarAnotacao) {
+    btnSalvarAnotacao.addEventListener('click', () => {
+        salvarTexto('anotacao-textarea', 'anotacao-data');
+    });
+}
 
+const btnCopiarAnotacao = document.getElementById('btn-copiar-anotacao-btn'); // Crie um ID para o botão Copiar Anotação
+if (btnCopiarAnotacao) {
+    btnCopiarAnotacao.addEventListener('click', () => {
+        copiarTexto('anotacao-textarea');
+    });
+}
+
+const btnLimparAnotacao = document.getElementById('btn-limpar-anotacao-btn'); // Crie um ID para o botão Limpar Anotação
+if (btnLimparAnotacao) {
+    btnLimparAnotacao.addEventListener('click', () => {
+        document.getElementById('anotacao-textarea').value = '';
+    });
+}
+*/
 
 const orientacoes = {
     horizonte: [
