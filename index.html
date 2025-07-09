@@ -16,13 +16,13 @@
         <nav id="menu-lateral" class="containerNav">
             <ul>
                 <h3>Menu</h3>
-                <li><a href="#passagem-turno">Passagem de Turno</a></li>
-                <li><a href="#anotacoes">Anotações</a></li>
+                <li><a href="#passagem-turno-section">Passagem de Turno</a></li>
+                <li><a href="#anotacoes-section">Anotações</a></li>
             
                 <li><a href="#telefones">Telefones Úteis</a></li>
                 
                 <li><a href="#ocorrencias">Ocorrências</a></li>
-                <li><a href="#tb-cargo">TB Cargo</a></li>
+                <li><a href="#tb-cargo">Orientações TB Cargo</a></li>
                 <li> <a href="#">Check list</a>
                     <ul>
                         <li><a href="#orientacoes-checklist">Orientações Check List</a></li>
@@ -63,6 +63,7 @@
     </section>
     <hr>
 
+    <!-- Anotações -->
     <section class="flash bd-muted" id="anotacoes-section"> <h2>📝 Anotações</h2>
         <label for="anotacao-textarea">Digite suas observações aqui:</label>
         <textarea id="anotacao-textarea" cols="100" rows="10" placeholder="Exemplo: Verificar documentação do caminhão, atualizar rastreador, etc."></textarea>
@@ -71,8 +72,7 @@
         <button onclick="copiarTexto('anotacao-textarea')" class="success">Copiar anotação</button>
         <button onclick="document.getElementById('anotacao-textarea').value = ''" class="danger bd-danger">Limpar</button>
     </section>
-    <hr>
-    <hr>
+    <hr>    
 
     <!-- Telefones -->
     <section class="flash bd-accent" id="telefones">

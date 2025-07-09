@@ -143,9 +143,9 @@ const orientacoes = {
         "*Início viagem carregado ou de check list*.",
         "- Enviar mensagem escrito *teste* no teclado do rastreador.",
         "- Pressionar o botão de pânico.",
-        "- Abrir as portas."        
-        
-    ],    
+        "- Abrir as portas."
+
+    ],
     caminhao1: [
         "*Início viagem carregado ou de check list*.",
         "- Enviar mensagem escrito *teste* no teclado do rastreador.",
@@ -201,7 +201,7 @@ const orientacoes = {
         "Retirar a tomada do desengate.",
         "*Quando terminar, por favor me avise*."
     ],
-  
+
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -272,15 +272,34 @@ document.getElementById('ocorrencia-select').addEventListener('change', function
 
 // Orientações TB Cargo
 document.getElementById('copiar-tb-cargo').onclick = function () {
-    const texto = `Padrão Ônix de Macro Technocel Padrão / Technocel 2024
+    const texto = `✅ Conferir a Rota:
 
-    - Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar previamente;
-    - Ao iniciar viagem, enviar macro de INICIO DE VIAGEM CARREGADO (macro 3), informar todas as paradas e reinícios de viagem;
-    - Ao chegar no cliente enviar a macro CHEGADA NO CLIENTE (macro 7); e ao terminar, enviar a macro de FIM DE VIAGEM (macro 11).
-    - Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é TB CARGO, qualquer outra resposta será considerada situação de risco;
-    - Qualquer dúvida ou necessidade durante a viagem, acionar a nossa central 24 horas Technocel via:
-    https://wa.me/551733347850 - WhatsApp
-    +55 17 3334-7850 - Número para contato
-    `;
+Conferir a rota no link que será enviado pela equipe TB CARGO.
+
+Caso haja necessidade de ajuste, informar previamente.
+
+📍 Macros de Viagem:
+
+Ao iniciar viagem, enviar macro de INICIO DE VIAGEM CARREGADO (macro 3).
+
+Informar todas as paradas e reinícios de viagem.
+
+Ao chegar no cliente, enviar a macro CHEGADA NO CLIENTE (macro 7).
+
+Ao terminar, enviar a macro de FIM DE VIAGEM (macro 11).
+
+🚨 Situação de Risco:
+
+Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem é TB CARGO.
+
+Qualquer outra resposta será considerada situação de risco.
+
+📞 Suporte 24h Technocel:
+
+Qualquer dúvida ou necessidade durante a viagem, acionar nossa central 24 horas Technocel via:
+
+WhatsApp: https://wa.me/551733347850
+
+Telefone: +55 17 3334-7850`;
     navigator.clipboard.writeText(texto);
 };
