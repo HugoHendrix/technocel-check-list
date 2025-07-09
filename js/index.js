@@ -89,6 +89,13 @@ if (btnCopiarAnotacao) btnCopiarAnotacao.onclick = () => copiarTexto('anotacao')
 
 
 const orientacoes = {
+    horizonte: [
+        "*Início viagem carregado ou de check list*.",
+        "- Enviar mensagem escrito *teste* no teclado do rastreador.",
+        "- Pressionar o botão de pânico.",
+        "- Abrir as portas."        
+        
+    ],    
     caminhao1: [
         "*Início viagem carregado ou de check list*.",
         "- Enviar mensagem escrito *teste* no teclado do rastreador.",
@@ -143,7 +150,8 @@ const orientacoes = {
         "Aguardar confirmação de alerta de baú aberto e fechar o baú.",
         "Retirar a tomada do desengate.",
         "*Quando terminar, por favor me avise*."
-    ]
+    ],
+  
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -189,13 +197,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Ocorrências Check list
-const textoBase = `A TECHNOCEL VEM POR MEIO DESTE INFORMAR QUE NAO FOI POSSIVEL A REALIZACAO DO CHECK LIST SOLICITADO PARA A PLACA EM QUESTAO PELO MOTIVO DESCRITO ABAIXO. FAVOR SOLICITAR AO CONDUTOR QUE ASSIM QUE POSSIVEL NOS CONTATE PARA REALIZACAO DOS DEVIDOS TESTES, LEMBRANDO QUE CASO O VEICULO NAO POSSUA CHECK LIST VALIDO PARA A VIAGEM, A REGULADORA DE SINISTROS PODERA NEGATIVAR O PAGAMENTO DA CARGA DEVIDO A TAL NAO CONFORMIDADE.
+const textoBase = `Informamos que a Technocel não conseguiu realizar o checklist da placa em questão pelo motivo abaixo.
 
-OBS.: AS SOLICITACOES DE CHECK LIST NAO REALIZADAS EM 48 HORAS SAO AUTOMATICAMENTE CANCELADAS, SENDO NECESSARIO ENVIO DE NOVO PEDIDO APOS ESTE PERIODO.
+É crucial que o condutor nos contate o mais breve possível para a realização dos testes. Sem um checklist válido, a reguladora de sinistros pode negar o pagamento da carga por não conformidade.
+
+Atenção: Solicitações de checklist que não são concluídas em 48 horas são canceladas automaticamente, exigindo um novo pedido após esse prazo.
 `;
 
 const motivos = {
     "CONDUTOR_VISUALIZA": "Condutor visualiza as mensagens mas não responde à central.",
+    "SEM_CONTATO": "Precisamos do contato do motorista responsável pelo acompanhamento do checklist. Poderia nos informar?",
     "SEM_ESPELHAMENTO": "SEM ESPELHAMENTO: Prezados, verificamos que o veículo em questão ainda não possui espelhamento configurado. Solicitamos, por gentileza, que o espelhamento seja realizado já com a opção de Inteligência Embarcada (I.E.) liberada, a fim de viabilizar as configurações necessárias para o pleno funcionamento das configurações. Agradecemos desde já pela atenção e aguardamos o retorno.",
     "SEM_IE": "O ESPELHAMENTO ATUAL NÃO POSSUI I.E: Prezados, Verificamos que o espelhamento atual não apresenta a opção de inteligência liberada. Seria possível verificar essa questão e refazer o espelhamento com a referida opção ativada. Dessa forma, conseguiremos realizar as configurações necessárias para o correto funcionamento das configurações."
 };

@@ -107,6 +107,7 @@
         <select id="ocorrencia-select">
             <option value="">-- Escolha uma opção --</option>
             <option value="CONDUTOR_VISUALIZA">Condutor visualiza as mensagens mas não responde à central</option>
+            <option value="SEM_CONTATO">Sem o contato do motorista</option>
             <option value="SEM_ESPELHAMENTO">Sem espelhamento</option>
             <option value="SEM_IE">O espelhamento atual não possui I.E</option>
         </select>
@@ -150,6 +151,7 @@
         <label for="tipo-caminhao">Selecione o tipo de caminhão:</label>
         <select id="tipo-caminhao">
             <option value="">-- Escolha --</option>
+            <option value="horizonte">Caminhão Horizonte Sider ou Tanque</option>
             <option value="caminhao1">Caminhão Container [Dalastra/Satel]</option>
             <option value="caminhao2">Caminhão Truck [Barra Mansa]</option>
             <option value="caminhao3">Caminhão Carreta com baú</option>
@@ -443,7 +445,24 @@
                     <li>Autotrac: Horário de Brasília</li>
                 </ul>
             </li>
+            <li><strong>Eplast</strong>
+                <ul>
+                    <li>Sascar: PET</li>
+                    <li>Onix: PET</li>
+                    <li>Autotrac: PET</li>
+                    <li>Omnilink: Não negativo</li>
+                </ul>
+            </li>
+            <li><strong>Fernandes</strong>
+                <ul>
+                    <li>Omnilink: Não negativo</li>
+                    <li>Sascar: Data do dia</li>
+                    <li>Onix: Ponto e visa de controle</li>
+                    <li>Autotrac: Senha de 5 digitos criada no check list</li>
+                </ul>
+            </li>
         </ul>
+
     </section>
     
     <hr>
