@@ -19,20 +19,27 @@
                 <li><a href="#passagem-turno-section">Passagem de Turno</a></li>
                 <li><a href="#anotacoes-section">Anotações</a></li>
             
-                <li><a href="#telefones">Telefones Úteis</a></li>
+                
                 
                 <li><a href="#ocorrencias">Ocorrências</a></li>
-                <li><a href="#tb-cargo">Orientações TB Cargo</a></li>
-                <li> <a href="#">Check list</a>
+                
+                <li> <span>Check list</span>
                     <ul>
                         <li><a href="#orientacoes-checklist">Orientações Check List</a></li>
                         <li><a href="#check-list-omnilink">Check List Omnilink</a></li>
                         <li><a href="#check-list-autotrac">Check List Autotrac</a></li>
                         <li><a href="#check-list-onix">Check List Onix</a></li>
-                        <li><a href="#contra-senha">Contra Senha</a></li>
+                        <li><a href="#contra-senha">Contra Senha de Segurança</a></li>
                     </ul>
                 </li>
-                <li><a href="#conversao-placa-mercosul">Conversão Placa Merco Sul</a></li>
+                <li> <span>Informações Gerais</span>
+                    <ul>
+                        <li><a href="#telefones">Telefones Úteis</a></li>
+                        <li><a href="#conversao-placa-mercosul">Conversão Placa Merco Sul</a></li>
+                        <li><a href="#macros-tipagem">Atalhos de macros e Tipagem</a></li>
+                        <li><a href="#tb-cargo">Orientações TB Cargo</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </menu>
@@ -72,31 +79,6 @@
         <button onclick="copiarTexto('anotacao-textarea')" class="success">Copiar anotação</button>
         <button onclick="document.getElementById('anotacao-textarea').value = ''" class="danger bd-danger">Limpar</button>
     </section>
-    <hr>    
-
-    <!-- Telefones -->
-    <section class="flash bd-accent" id="telefones">
-        <h2>📞 Telefones Úteis</h2>
-        <p>Para qualquer dúvida ou suporte, entre em contato com os seguintes números:</p>
-        <ul>
-            <li><strong>Trafegus WhatsApp Suporte:</strong> <a id="telefone-trafegus" href="https://wa.me/554930267777"
-                    target="_blank" rel="noopener noreferrer" title="Chamar suporte via WhatsApp">(049) 3026-7777</a>
-            <li><strong>Sascar Suporte Técnico:</strong> 0800 017 7202</li>
-            <li><strong>Sascar Suporte WhatsApp:</strong> <a href="https://wa.me/551140026004" target="_blank"
-                    rel="noopener noreferrer">4002-6004</a></li>
-            <li><strong>Onix WhatsApp:</strong> <a href="https://wa.me/5543999140020" target="_blank"
-                    rel="noopener noreferrer">(43) 99914-0020</a></li>
-            <li><strong>Omnilink WhatsApp:</strong> <a href="https://wa.me/551140403108" target="_blank"
-                    rel="noopener noreferrer">(11) 4040-3108</a></li>
-            <li><strong>Omnilink Atendimento Geral:</strong> 4003-6754</li>
-            <li><strong>Autotrac Central de Atendimento:</strong> (61) 3961-7600</li>
-            <li><strong>Positron WhatsApp:</strong><a href="https://wa.me/5511963990556" target="_blank"
-                    rel="noopener noreferrer"> 011 96399-0556</a></li>
-            <li><strong>Sighra:</strong> (11) 3662-5420</li>
-        </ul>
-        <p>Esses números estão disponíveis para atender suas necessidades relacionadas ao check list e outras
-            operações.</p>
-    </section>
     <hr>
 
     <!-- Seção de ocorrências -->
@@ -115,29 +97,6 @@
         <textarea id="ocorrencia-texto" cols="100" rows="8" readonly></textarea>
         <br>
         <button onclick="copiarTexto('ocorrencia-texto')" class="success">Copiar ocorrência</button>
-    </section>
-    <hr>
-
-    <!-- Seção de Orientações TB Cargo -->
-    <section class="flash bd-muted" id="tb-cargo">
-        <h2>🚚 Orientações TB Cargo</h2>
-        <p><strong>Padrão Ônix de Macro Technocel Padrão / Technocel 2024</strong></p>
-        <ul>
-            <li>Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar
-                previamente;</li>
-            <li>Ao iniciar viagem, enviar macro de <strong>INICIO DE VIAGEM CARREGADO (macro 3)</strong>, informar todas
-                as paradas e reinícios de viagem;</li>
-            <li>Ao chegar no cliente enviar a macro <strong>CHEGADA NO CLIENTE (macro 7)</strong>; e ao terminar, enviar
-                a macro de <strong>FIM DE VIAGEM (macro 11)</strong>.</li>
-            <li>Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é
-                <strong>TB CARGO</strong>, qualquer outra resposta será considerada situação de risco;
-            </li>
-            <li>Qualquer dúvida ou necessidade durante a viagem, acionar a nossa central 24 horas Technocel via:<br>
-                <a href="https://wa.me/551733347850" target="_blank" rel="noopener noreferrer">WhatsApp</a> ou
-                <strong>+55 17 3334-7850</strong>
-            </li>
-        </ul>
-        <button id="copiar-tb-cargo" class="accent">Copiar orientações TB Cargo</button>
     </section>
     <hr>
 
@@ -465,6 +424,31 @@
     </section>
     <hr>
 
+        <!-- Telefones -->
+    <section class="flash bd-accent" id="telefones">
+        <h2>📞 Telefones Úteis</h2>
+        <p>Para qualquer dúvida ou suporte, entre em contato com os seguintes números:</p>
+        <ul>
+            <li><strong>Trafegus WhatsApp Suporte:</strong> <a id="telefone-trafegus" href="https://wa.me/554930267777"
+                    target="_blank" rel="noopener noreferrer" title="Chamar suporte via WhatsApp">(049) 3026-7777</a>
+            <li><strong>Sascar Suporte Técnico:</strong> 0800 017 7202</li>
+            <li><strong>Sascar Suporte WhatsApp:</strong> <a href="https://wa.me/551140026004" target="_blank"
+                    rel="noopener noreferrer">4002-6004</a></li>
+            <li><strong>Onix WhatsApp:</strong> <a href="https://wa.me/5543999140020" target="_blank"
+                    rel="noopener noreferrer">(43) 99914-0020</a></li>
+            <li><strong>Omnilink WhatsApp:</strong> <a href="https://wa.me/551140403108" target="_blank"
+                    rel="noopener noreferrer">(11) 4040-3108</a></li>
+            <li><strong>Omnilink Atendimento Geral:</strong> 4003-6754</li>
+            <li><strong>Autotrac Central de Atendimento:</strong> (61) 3961-7600</li>
+            <li><strong>Positron WhatsApp:</strong><a href="https://wa.me/5511963990556" target="_blank"
+                    rel="noopener noreferrer"> 011 96399-0556</a></li>
+            <li><strong>Sighra:</strong> (11) 3662-5420</li>
+        </ul>
+        <p>Esses números estão disponíveis para atender suas necessidades relacionadas ao check list e outras
+            operações.</p>
+    </section>
+    <hr>
+
     <!-- Seção placas MercoSul -->
     <section class="flash bd-muted" id="conversao-placa-mercosul">
         <h2>Conversão da Placa Atual para Placa Mercosul</h2>
@@ -481,9 +465,72 @@
             </p>
         
     </section>
+    <hr>
 
+    <!-- Macros e Tipagem -->
+    <section class="flash bd-variant" id="macros-tipagem">
+        <h2>Macros e Tipagens</h2>
 
+        <p>
+            Esta seção contém códigos de macros importantes para diferentes sistemas de rastreamento (Sascar, Autotrac) e códigos de tipagem para o sistema Omnilink, facilitando a comunicação e o registro de eventos.
+        </p>
 
+        <div class="sistema-macros">
+            <h2>Macros Sascar</h2>
+            <p>Utilize os seguintes códigos para operações de teste no sistema Sascar:</p>
+            <ul>
+                <li><strong>Início de Teste:</strong> <code>12</code></li>
+                <li><strong>Fim de Teste:</strong> <code>13</code></li>
+            </ul>
+        </div>
+
+        <div class="sistema-macros">
+            <h2>Autotrac - Horizonte</h2>
+            <p>Códigos de macros específicos para operações de teste no sistema Autotrac (Horizonte):</p>
+            <ul>
+                <li><strong>Início de Teste:</strong> <code>15</code></li>
+                <li><strong>Fim de Teste:</strong> <code>16</code></li>
+            </ul>
+        </div>
+
+        <hr> <div class="sistema-tipagem">
+            <h2>Tipagem Omnilink</h2>
+            <p>Códigos de tipagem para comunicação entre central e veículo no sistema Omnilink:</p>
+            <ul>
+                <li><strong>Central para Veículo:</strong> <code>496</code></li>
+                <li><strong>Veículo/Terminal para Central:</strong> <code>497</code></li>
+            </ul>
+        </div>
+
+        <p>
+            Manter esses códigos à mão é fundamental para o bom funcionamento das operações e para garantir a correta comunicação com os veículos e terminais.
+        </p>
+
+    </section>
+    <hr>
+
+    <!-- Seção de Orientações TB Cargo -->
+    <section class="flash bd-variant" id="tb-cargo">
+        <h2>🚚 Orientações TB Cargo</h2>
+        <p><strong>Padrão Ônix de Macro Technocel Padrão / Technocel 2024</strong></p>
+        <ul>
+            <li>Conferir a rota no link que será enviado pela equipe TB CARGO, caso haja necessidade de ajuste informar
+                previamente;</li>
+            <li>Ao iniciar viagem, enviar macro de <strong>INICIO DE VIAGEM CARREGADO (macro 3)</strong>, informar todas
+                as paradas e reinícios de viagem;</li>
+            <li>Ao chegar no cliente enviar a macro <strong>CHEGADA NO CLIENTE (macro 7)</strong>; e ao terminar, enviar
+                a macro de <strong>FIM DE VIAGEM (macro 11)</strong>.</li>
+            <li>Quando questionado se a viagem segue normal, a resposta para indicar que está tudo bem na viagem é
+                <strong>TB CARGO</strong>, qualquer outra resposta será considerada situação de risco;
+            </li>
+            <li>Qualquer dúvida ou necessidade durante a viagem, acionar a nossa central 24 horas Technocel via:<br>
+                <a href="https://wa.me/551733347850" target="_blank" rel="noopener noreferrer">WhatsApp</a> ou
+                <strong>+55 17 3334-7850</strong>
+            </li>
+        </ul>
+        <button id="copiar-tb-cargo" class="accent">Copiar orientações TB Cargo</button>
+    </section>
+    <hr>
 
 
     <script src="./js/index.js"></script>

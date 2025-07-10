@@ -55,7 +55,7 @@ function salvarTexto(idTextarea, storageKey) {
         const texto = textarea.value;
         localStorage.setItem(storageKey, texto);
         console.log(`[SALVAR] Texto salvo para ${storageKey}:`, texto); // Para depuração
-        
+
     } else {
         console.error(`[ERRO SALVAR] Textarea com ID '${idTextarea}' não encontrada.`);
     }
@@ -67,7 +67,7 @@ function copiarTexto(idTextarea) {
         navigator.clipboard.writeText(textarea.value)
             .then(() => {
                 console.log('[COPIAR] Texto copiado com sucesso!'); // Para depuração
-                
+
             })
             .catch(err => {
                 console.error('[ERRO COPIAR] Erro ao copiar texto:', err);
@@ -112,31 +112,7 @@ if (btnCopiarPassagem) {
     });
 }
 
-// NOTA: Para a seção 'Anotações', você já tem os 'onclick' nos botões HTML.
-// Se quiser mudar para 'addEventListener' (que é a prática recomendada),
-// você precisaria remover os 'onclick' do HTML e adicionar listeners aqui, assim:
-/*
-const btnSalvarAnotacao = document.getElementById('btn-salvar-anotacao-btn'); // Crie um ID para o botão Salvar Anotação
-if (btnSalvarAnotacao) {
-    btnSalvarAnotacao.addEventListener('click', () => {
-        salvarTexto('anotacao-textarea', 'anotacao-data');
-    });
-}
-
-const btnCopiarAnotacao = document.getElementById('btn-copiar-anotacao-btn'); // Crie um ID para o botão Copiar Anotação
-if (btnCopiarAnotacao) {
-    btnCopiarAnotacao.addEventListener('click', () => {
-        copiarTexto('anotacao-textarea');
-    });
-}
-
-const btnLimparAnotacao = document.getElementById('btn-limpar-anotacao-btn'); // Crie um ID para o botão Limpar Anotação
-if (btnLimparAnotacao) {
-    btnLimparAnotacao.addEventListener('click', () => {
-        document.getElementById('anotacao-textarea').value = '';
-    });
-}
-*/
+//Orientação do check list
 
 const orientacoes = {
     horizonte: [
