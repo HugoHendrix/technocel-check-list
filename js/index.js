@@ -116,10 +116,10 @@ if (btnCopiarPassagem) {
 
 const orientacoes = {
     horizonte: [
-        "*Início viagem carregado ou de check list*.",
-        "- Enviar mensagem escrito *teste* no teclado do rastreador.",
+        "*Por favor enviar inicio check list - código 12*.",        
         "- Pressionar o botão de pânico.",
-        "- Abrir as portas."
+        "- Abrir as portas.",        
+        "*Quando terminar, por favor me avise.*"
 
     ],
     caminhao1: [
@@ -232,7 +232,7 @@ Atenção: Solicitações de checklist que não são concluídas em 48 horas sã
 
 const motivos = {
     "CONDUTOR_VISUALIZA": "Condutor visualiza as mensagens mas não responde à central.",
-    "SEM_CONTATO": "Precisamos do contato do motorista responsável pelo acompanhamento do checklist. Poderia nos informar?",
+    "SEM_CONTATO": "Precisamos do contato do motorista responsável pelo acompanhamento do checklist.",
     "SEM_ESPELHAMENTO": "SEM ESPELHAMENTO: Prezados, verificamos que o veículo em questão ainda não possui espelhamento configurado. Solicitamos, por gentileza, que o espelhamento seja realizado já com a opção de Inteligência Embarcada (I.E.) liberada, a fim de viabilizar as configurações necessárias para o pleno funcionamento das configurações. Agradecemos desde já pela atenção e aguardamos o retorno.",
     "SEM_IE": "O ESPELHAMENTO ATUAL NÃO POSSUI I.E: Prezados, Verificamos que o espelhamento atual não apresenta a opção de inteligência liberada. Seria possível verificar essa questão e refazer o espelhamento com a referida opção ativada. Dessa forma, conseguiremos realizar as configurações necessárias para o correto funcionamento das configurações."
 };
