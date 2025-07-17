@@ -116,7 +116,8 @@ if (btnCopiarPassagem) {
 
 const orientacoes = {
     horizonte: [
-        "*Por favor enviar inicio check list - código 12*.",        
+        "*Por favor enviar inicio check list - código 15*.",  
+        "- Deixar a ignição ligada",
         "- Pressionar o botão de pânico.",
         "- Abrir as portas.",        
         "*Quando terminar, por favor me avise.*"
@@ -124,6 +125,7 @@ const orientacoes = {
     ],
     caminhao1: [
         "*Início viagem carregado ou de check list*.",
+        "- Deixar a ignição ligada",
         "- Enviar mensagem escrito *teste* no teclado do rastreador.",
         "- Pressionar o botão de pânico.",
         "- Abrir as portas.",
@@ -132,6 +134,7 @@ const orientacoes = {
     ],
     caminhao2: [
         "*Início viagem carregado ou de check list*.",
+        "- Deixar a ignição ligada",
         "- Enviar mensagem escrito *teste* no teclado do rastreador.",
         "- Pressionar o botão de pânico.",
         "- Abrir as portas.",
@@ -140,6 +143,7 @@ const orientacoes = {
     ],
     caminhao3: [
         "*Início viagem carregado ou de check list*.",
+        "- Deixar a ignição ligada",
         "- Enviar mensagem escrito *teste* no teclado do rastreador.",
         "- Pressionar o botão de pânico.",
         "- Abrir as portas.",
@@ -153,7 +157,7 @@ const orientacoes = {
         "Coloca veículo trânsito.",
         "Enviar mensagem escrito *teste* no teclado do rastreador.",
         "Aperta o botão de pânico.",
-        "Abrir portas.",
+        "Aguardar local autorizado e abrir o baú.",
         "Retirar a tomada do desengate, por favor.",
         "*Quando terminar, por favor me avise.*"
     ],
@@ -163,7 +167,7 @@ const orientacoes = {
         "Enviar mensagem escrito *teste* no teclado do rastreador.",
         "Aperta o botão de pânico.",
         "Abrir portas.",
-        "Abrir baú, por favor.",
+        "Aguardar local autorizado e abrir o baú.",
         "*Quando terminar, por favor me avise.*"
     ],
     omnilink3: [
@@ -172,7 +176,7 @@ const orientacoes = {
         "Enviar mensagem escrito *teste* no teclado do rastreador.",
         "Aperta o botão de pânico.",
         "Abrir portas.",
-        "Abrir baú, por favor.",
+        "Aguardar local autorizado e abrir o baú.",
         "Aguardar confirmação de alerta de baú aberto e fechar o baú.",
         "Retirar a tomada do desengate.",
         "*Quando terminar, por favor me avise*."
